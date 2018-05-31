@@ -64,8 +64,22 @@ public class ChatUI{
     }
   
     public static void main(String [] args){
-        System.out.println("Hello World !");
-        ChatUI c=new ChatUI();
+        
+        try{
+            System.out.println("Hello World !");
+            ChatUI c=new ChatUI();
+            ChatClient d=new ChatClient("Sepultura");			
+            ChatServerInt server=(ChatServerInt)Naming.lookup("rmi://192.168.1.103:1099/myabc");
+            server.login(d);
+            System.out.println("Listening.....");			
+            Scanner s=new Scanner(System.in);			
+            while(true){
+                String line=s.nextLine();
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }  
   
   //User Interface code.

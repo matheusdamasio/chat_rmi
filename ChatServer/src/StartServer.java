@@ -7,7 +7,7 @@ public class StartServer {
             java.rmi.registry.LocateRegistry.createRegistry(1099);
             
             ChatServerInt b=new ChatServer();
-            Naming.rebind("rmi://10.62.136.111/myabc", b);
+            Naming.rebind("rmi://192.168.1.103/myabc", b);
             System.out.println("[System] Chat está funcionando");
         }
         catch (Exception e) {
